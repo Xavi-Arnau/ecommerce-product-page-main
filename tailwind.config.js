@@ -14,21 +14,21 @@ module.exports = {
         black: "hsl(0, 0%, 0%)",
       },
       animation: {
-        openmenu: "openmenu 1s ease-in",
-        closemenu: "closemenu 1s ease-in",
+        openmenu: "openmenu 0.5s ease-in-out",
+        closemenu: "closemenu 0.5s ease-in-out",
       },
       keyframes: {
         openmenu: {
           // initial position
-          "0%": { opacity: "0", display: "hidden" },
+          "0%": { opacity: 0, display: "none" },
           // final position
-          "100%": { opacity: "0.7", display: "block" },
+          "100%": { opacity: 0.7, display: "block" },
         },
         closemenu: {
           // initial position
-          "0%": { opacity: "0.7", display: "block" },
+          "0%": { opacity: 0.7, display: "block" },
           // final position
-          "100%": { opacity: "0", display: "hidden" },
+          "100%": { opacity: 0, display: "none" },
         },
       },
     },

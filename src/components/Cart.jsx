@@ -30,9 +30,13 @@ const Cart = () => {
               <div className="w-4/5">
                 <p className="capitalize text-sm">{getProductData(id).name}</p>
                 <p>
-                  ${getProductData(id).discountedPrice} x {cartItems[id]}
+                  ${getProductData(id).discountedPrice.toFixed(2)} x{" "}
+                  {cartItems[id]}
                   <span className="font-bold pl-6">
-                    ${getProductData(id).discountedPrice * cartItems[id]}
+                    $
+                    {(
+                      getProductData(id).discountedPrice * cartItems[id]
+                    ).toFixed(2)}
                   </span>
                 </p>
               </div>

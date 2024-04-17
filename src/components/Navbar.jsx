@@ -1,13 +1,14 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import logo from "../assets/logo.svg";
-import menu from "../assets/icon-menu.svg";
+import cartIcon from "../assets/icon-cart.svg";
 import avatar from "../assets/image-avatar.png";
-import { AiOutlineShoppingCart } from "react-icons/ai";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import Cart from "./Cart";
+import CartContext from "../context/CartContext";
 
 const Navbar = () => {
   const [showCart, setShowCart] = useState(false);
+  const { totalProductQuantity } = useContext(CartContext);
   const [nav, setNav] = useState(false);
   const handleNav = () => {
     setNav(!nav);
@@ -45,9 +46,17 @@ const Navbar = () => {
           </ul>
         </div>
 
-        <div className="h-16 w-4/12  relative">
+        <div className="md:h-16 w-4/12  relative">
           <div className="flex flex-row gap-8 justify-end items-center">
-            <AiOutlineShoppingCart size={28} onClick={toggleCartVisibility} />
+            <div className="relative ">
+              <img onClick={toggleCartVisibility} src={cartIcon} alt="" />
+              {totalProductQuantity() > 0 ? (
+                <div className="text-xs absolute text-white bg-orange -right-2 -top-2 w-4 h-4 rounded-full flex flex-row items-center justify-center">
+                  <span>{totalProductQuantity()}</span>
+                </div>
+              ) : null}
+            </div>
+
             <img
               onClick={toggleCartVisibility}
               src={avatar}
@@ -70,19 +79,19 @@ const Navbar = () => {
         <div className="p-10 flex flex-col gap-6 mt-20">
           <ul className="flex flex-col gap-4">
             <li>
-              <a>Collections</a>
+              <a href="/">Collections</a>
             </li>
             <li>
-              <a>Men</a>
+              <a href="/">Men</a>
             </li>
             <li>
-              <a>Women</a>
+              <a href="/">Women</a>
             </li>
             <li>
-              <a>About</a>
+              <a href="/">About</a>
             </li>
             <li>
-              <a>Contact</a>
+              <a href="/">Contact</a>
             </li>
           </ul>
         </div>
@@ -90,8 +99,8 @@ const Navbar = () => {
       <div
         className={
           nav
-            ? "md:hidden w-full inset-0 bg-black bg-opacity-70 z-10 fixed h-full ease-in-out duration-500"
-            : "md:hidden w-full inset-0 bg-black bg-opacity-0 z-10 fixed h-full ease-in-out duration-500 hidden"
+            ? "md:hidden w-full inset-0 bg-black  z-10 fixed h-full opacity-70 animate-openmenu"
+            : "md:hidden w-full inset-0 bg-black  z-10 fixed h-full opacity-0 hidden animate-closemenu"
         }
       ></div>
       {/*end mobile menu*/}
