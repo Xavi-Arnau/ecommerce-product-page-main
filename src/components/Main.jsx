@@ -8,8 +8,7 @@ import CartContext from "../context/CartContext.jsx";
 const Main = ({ showModal }) => {
   const [product, setProduct] = useState(null);
   const [mainImage, setMainImage] = useState(null);
-  const { cartItems, quantity, addToCart, plusOne, minusOne } =
-    useContext(CartContext);
+  const { quantity, addToCart, plusOne, minusOne } = useContext(CartContext);
 
   useEffect(() => {
     setProduct(productData);
