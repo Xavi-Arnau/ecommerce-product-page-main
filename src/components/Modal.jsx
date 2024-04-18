@@ -49,7 +49,7 @@ const Modal = ({ onClose }) => {
     <div
       ref={modalRef}
       onClick={closeModal}
-      className="fixed inset-0 bg-black bg-opacity-80 backgrop-blur-sm flex justify-center"
+      className="fixed inset-0 bg-black bg-opacity-80 backgrop-blur-sm flex justify-center z-30"
     >
       <div className="w-6/12 mx-auto mt-20">
         <div className="flex flex-row justify-end w-1/2 mx-auto">

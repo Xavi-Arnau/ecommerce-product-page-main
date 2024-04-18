@@ -43,7 +43,7 @@ const Main = ({ showModal }) => {
   };
   return (
     <div className="w-full">
-      <div className="md:w-10/12 mx-auto flex flex-col md:flex-row gap-8 md:gap-44 md:p-20 mt-8">
+      <div className="md:w-10/12 mx-auto flex flex-col md:flex-row gap-4 md:gap-4 md:px-20 mt-4 md:mt-20">
         <div className="w-full md:w-1/2 flex flex-col items-center relative">
           <img
             onClick={showModal}
@@ -77,7 +77,7 @@ const Main = ({ showModal }) => {
           </div>
         </div>
         <div className="md:w-1/2 p-8">
-          <h2 className="mt-16 uppercase text-orange text-lg font-bold">
+          <h2 className="mt-2 md:mt-16 uppercase text-orange text-lg font-bold">
             {product && product.company}
           </h2>
           <h1 className="mt-10 capitalize text-5xl font-bold">

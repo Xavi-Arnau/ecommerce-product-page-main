@@ -26,8 +26,8 @@ const Navbar = () => {
   };
   return (
     <div className="w-full">
-      <div className="w-10/12 mx-auto flex flex-row mt-8 gap-6 md:border-b-2 md:border-grayishBlue items-center h-16">
-        <div onClick={handleNav} className="md:hidden z-30">
+      <div className="w-10/12 mx-auto flex flex-row mt-4 md:mt-8 gap-6 md:border-b-2 md:border-grayishBlue items-center md:h-16">
+        <div onClick={handleNav} className="md:hidden z-50">
           {nav ? <AiOutlineClose size={30} /> : <AiOutlineMenu size={30} />}
         </div>
         <div className="md:h-16 md:w-2/12">
@@ -79,8 +79,8 @@ const Navbar = () => {
       <div
         className={
           nav
-            ? "md:hidden w-2/3 bg-white z-20 fixed h-full top-[0px] left-[0px] ease-in duration-500"
-            : "md:hidden w-2/3 bg-white z-20 fixed h-full top-[0px] left-[-100%] ease-in duration-500"
+            ? "md:hidden w-2/3 bg-white z-40 fixed h-full top-[0px] left-[0px] ease-in duration-500"
+            : "md:hidden w-2/3 bg-white z-40 fixed h-full top-[0px] left-[-100%] ease-in duration-500"
         }
       >
         <div className="p-10 flex flex-col gap-6 mt-20">
@@ -108,8 +108,8 @@ const Navbar = () => {
         onClick={closeMenu}
         className={
           nav
-            ? "md:hidden w-full inset-0 bg-black  z-10 fixed h-full opacity-70 animate-openmenu"
-            : "md:hidden w-full inset-0 bg-black  z-10 fixed h-full opacity-0 hidden animate-closemenu"
+            ? "md:hidden w-full inset-0 bg-black  z-30 fixed h-full opacity-70 animate-openmenu"
+            : "md:hidden w-full inset-0 bg-black  z-30 fixed h-full opacity-0 hidden animate-closemenu"
         }
       ></div>
       {/*end mobile menu*/}

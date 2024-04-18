@@ -9,7 +9,10 @@ const Cart = () => {
     return productData;
   }
   return (
-    <div className="bg-white fixed top-24 md:top-auto left-4 md:left-auto md:absolute shadow-xl rounded-xl flex flex-col gap-4 mt-4 md:right-0 min-h-44 w-[350px] md:w-96 z-20">
+    <div
+      className="bg-white fixed top-24 md:top-auto left-4 md:left-auto md:absolute shadow-xl 
+    rounded-xl flex flex-col gap-4 md:mt-4 md:right-0 min-h-44 w-11/12 md:w-96 z-20"
+    >
       <div className="text-xl font-bold border-b-2 border-grayishBlue px-8 py-4">
         Cart
       </div>
