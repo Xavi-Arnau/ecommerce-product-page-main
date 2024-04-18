@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useRef, useState } from "react";
 import logo from "../assets/logo.svg";
 import cartIcon from "../assets/icon-cart.svg";
 import avatar from "../assets/image-avatar.png";
@@ -16,6 +16,13 @@ const Navbar = () => {
 
   const toggleCartVisibility = () => {
     setShowCart(!showCart);
+  };
+
+  const menuRef = useRef();
+  const closeMenu = (e) => {
+    if (menuRef.current === e.target) {
+      handleNav();
+    }
   };
   return (
     <div className="w-full">
@@ -97,6 +104,8 @@ const Navbar = () => {
         </div>
       </div>
       <div
+        ref={menuRef}
+        onClick={closeMenu}
         className={
           nav
             ? "md:hidden w-full inset-0 bg-black  z-10 fixed h-full opacity-70 animate-openmenu"
