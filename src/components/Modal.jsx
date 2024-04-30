@@ -64,11 +64,17 @@ const Modal = ({ onClose }) => {
             alt=""
           />
           <div className="w-full h-full absolute flex flex-row justify-between items-center">
-            <div className="cursor-pointer bg-white rounded-full w-14 h-14 flex items-center justify-center -ml-6">
-              <img onClick={prevImage} src={prev} alt="" />
+            <div
+              onClick={prevImage}
+              className="cursor-pointer bg-white rounded-full w-14 h-14 flex items-center justify-center -ml-6"
+            >
+              <img src={prev} alt="" />
             </div>
-            <div className="cursor-pointer bg-white rounded-full w-14 h-14 flex items-center justify-center -mr-6">
-              <img onClick={nextImage} src={next} alt="" />
+            <div
+              onClick={nextImage}
+              className="cursor-pointer bg-white rounded-full w-14 h-14 flex items-center justify-center -mr-6"
+            >
+              <img src={next} alt="" />
             </div>
           </div>
         </div>
