@@ -24,6 +24,22 @@ describe("App", () => {
     cy.get(".text-xs").contains("2");
   });
 
+  it("Browse the gallery", () => {
+    cy.get("div.relative img.w-full").click();
+
+    cy.get(".-mr-6").click();
+    cy.get(".-mr-6").click();
+    cy.get(".-mr-6").click();
+    cy.get(".-mr-6").click();
+
+    cy.get(".-ml-6").click();
+    cy.get(".-ml-6").click();
+    cy.get(".-ml-6").click();
+    cy.get(".-ml-6").click();
+
+    cy.get("div.justify-end button.text-white").click();
+  });
+
   /*it("Add a product to the cart", () => {
     cy.get(":nth-child(2) > .relative > .-mt-4").click();
     cy.get(".text-2xl").contains("Your Cart (1)");
